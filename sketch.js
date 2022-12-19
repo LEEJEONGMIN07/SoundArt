@@ -154,20 +154,18 @@ function draw(){
   //textSize(72);
   //text(rotationX,100,100);
 
-  var val = slider.value();
+  b1.setVolume(slider.value());
+  b2.setVolume(slider.value());
+  b3.setVolume(slider.value());
+  b4.setVolume(slider.value());
+  b5.setVolume(slider.value());
+  b6.setVolume(slider.value());
+  b7.setVolume(slider.value());
+  b8.setVolume(slider.value());
+  b9.setVolume(slider.value());
+  b10.setVolume(slider.value());
 
-  b1.amp(val);
-  b2.amp(val);
-  b3.amp(val);
-  b4.amp(val);
-  b5.amp(val);
-  b6.amp(val);
-  b7.amp(val);
-  b8.amp(val);
-  b9.amp(val);
-  b10.amp(val);
-
-  background(value);
+  background(r, g, b);
 
   //Multitouch
   clear();
@@ -316,8 +314,8 @@ function toggle10(){
 }
 
 //동작센서(각도값)
-function deviceTurned() {
-  r = map(accelerationX, -90, 90, 100, 175);
-  g = map(accelerationY, -90, 90, 100, 200);
-  b = map(accelerationZ, -90, 90, 100, 200);
+function deviceMoved() {
+  r = map(rotationX, -180, 180, 100, 175);
+  g = map(rotationY, -180, 180, 100, 200);
+  b = map(rotationZ, -180, 180, 100, 200);
 }
