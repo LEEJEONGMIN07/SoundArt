@@ -109,7 +109,6 @@ function setup() {
   B10.touchStarted(toggle10);
 
   slider = createSlider(0, 1, 1, 0.01);
-  slider.position(20,20);
 
 
   //ios
@@ -151,20 +150,22 @@ function touchStarted() {
 
 function draw(){
   if(!permission) return;
-  background(255);
-  textSize(72);
-  text(rotationX,100,100);
+  //background(255);
+  //textSize(72);
+  //text(rotationX,100,100);
 
-  b1.amp(slider.value());
-  b2.amp(slider.value());
-  b3.amp(slider.value());
-  b4.amp(slider.value());
-  b5.amp(slider.value());
-  b6.amp(slider.value());
-  b7.amp(slider.value());
-  b8.amp(slider.value());
-  b9.amp(slider.value());
-  b10.amp(slider.value());
+  var val = slider.value();
+
+  b1.amp(val);
+  b2.amp(val);
+  b3.amp(val);
+  b4.amp(val);
+  b5.amp(val);
+  b6.amp(val);
+  b7.amp(val);
+  b8.amp(val);
+  b9.amp(val);
+  b10.amp(val);
 
   background(value);
 
@@ -177,7 +178,7 @@ function draw(){
 function toggle1(){
   if(!playing){
     b1.start();
-    b1.amp(slider.value());     
+    b1.amp(0.5, 1);     
     playing = true;
     B1.html('pause');
   }else{
@@ -194,7 +195,7 @@ function toggle2(){
     b2.amp(0.5, 1);   
     playing = true;
     B2.html('pause');
-  } else{
+  }else{
     b2.stop();
     b2.amp(0, 1); 
     playing = false;
@@ -208,7 +209,7 @@ function toggle3(){
     b3.amp(0.5, 1);     
     playing = true;
     B3.html('pause');
-  } else{
+  }else{
     b3.stop();
     b3.amp(0, 1); 
     playing = false;
@@ -222,7 +223,7 @@ function toggle4(){
     b4.amp(0.5, 1);     
     playing = true;
     B4.html('pause');
-  } else{
+  }else{
     b4.stop();
     b4.amp(0, 1); 
     playing = false;
@@ -236,7 +237,7 @@ function toggle5(){
     b5.amp(0.5, 1);     
     playing = true;
     B5.html('pause');
-  } else{
+  }else{
     b5.stop();
     b5.amp(0, 1); 
     playing = false;
@@ -250,7 +251,7 @@ function toggle6(){
     b6.amp(0.5, 1);    
     playing = true;
     B6.html('pause');
-  } else{
+  }else{
     b6.stop();
     b6.amp(0, 1); 
     playing = false;
@@ -264,7 +265,7 @@ function toggle7(){
     b7.amp(0.5, 1);    
     playing = true;
     B7.html('pause');
-  } else{
+  }else{
     b7.stop();
     b7.amp(0, 1); 
     playing = false;
@@ -278,7 +279,7 @@ function toggle8(){
     b8.amp(0.5, 1);    
     playing = true;
     B8.html('pause');
-  } else{
+  }else{
     b8.stop();
     b8.amp(0,1 ); 
     playing = false;
@@ -292,7 +293,7 @@ function toggle9(){
     b9.amp(0.5, 1);    
     playing = true;
     B9.html('pause');
-  } else{
+  }else{
     b9.stop();
     b9.amp(0, 1); 
     playing = false;
@@ -306,7 +307,7 @@ function toggle10(){
     b10.amp(0.5, 1);    
     playing = true;
     B10.html('pause');
-  } else{
+  }else{
     b10.stop();
     b10.amp(0, 1); 
     playing = false;
